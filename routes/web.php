@@ -28,6 +28,8 @@ Route::get('/post', function(){
 
 
 // Admin Panel Routes
-Route::get('/test', function(){
-    return view('admin.dashboard.index');
+Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
+    Route::get('/dashboard', function(){
+        return view('admin.dashboard.index');
+    });
 });
