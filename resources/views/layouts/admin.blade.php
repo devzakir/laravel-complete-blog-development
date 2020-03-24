@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="{{ asset('admin') }}/plugins/fontawesome-free/css/all.min.css">
   <link rel="stylesheet" href="{{ asset('admin') }}/css/adminlte.min.css">
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
@@ -108,6 +109,14 @@
               </li>
             </ul>
           </li>
+          <li class="nav-item mt-auto">
+            <a href="{{ route('category.index') }}" class="nav-link">
+              <i class="nav-icon fas fa-tags"></i>
+              <p>
+                Categories
+              </p>
+            </a>                    
+          </li>
           <li class="nav-item mt-auto bg-danger">
             <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="nav-link">
               <i class="nav-icon fas fa-sign-out-alt"></i>
@@ -153,5 +162,11 @@
 <script src="{{ asset('admin') }}/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
 <script src="{{ asset('admin') }}/js/adminlte.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script>
+  @if(Session::has('success'))
+  toastr.success("{{ Session::get('success') }}");
+  @endif
+</script>
 </body>
 </html>
