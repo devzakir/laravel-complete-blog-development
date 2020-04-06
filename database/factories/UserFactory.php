@@ -2,6 +2,9 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
+use App\Category;
+use App\Post;
+use App\Tag;
 use App\User;
 use Faker\Generator as Faker;
 use Illuminate\Support\Str;
@@ -24,5 +27,35 @@ $factory->define(User::class, function (Faker $faker) {
         'email_verified_at' => now(),
         'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
         'remember_token' => Str::random(10),
+    ];
+});
+
+// Category factory
+$factory->define(Category::class, function(Faker $faker){
+    return [
+        'name' => $faker->name(),
+        'slug' => Str::slug($faker->name()),
+    ];
+});
+
+
+// Tag factory
+$factory->define(Tag::class, function(Faker $faker){
+    return [
+        'name' => $faker->word(),
+        'slug' => Str::slug($faker->word()),
+    ];
+});
+
+
+// Post factory
+$factory->define(Post::class, function(Faker $faker){
+    return [
+        'title' => $faker->sentence(),
+        'slug' => Str::slug($faker->sentence()),
+        'image' => $faker->imageUrl(600, 400),
+        'description' => $faker->text(400),
+        'category_id' => factory('App\Category')->create()->id,
+        'user_id' => 1,
     ];
 });
