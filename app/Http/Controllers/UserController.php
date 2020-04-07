@@ -64,4 +64,40 @@ class UserController extends Controller
         }
         return redirect()->back();
     }
+
+    public function profile(){
+        $user = auth()->user();
+
+        return view('admin.user.profile', compact('user'));
+    }
+
+    public function profile_update(Request $request){
+        $user = auth()->user();
+
+        $this->validate($request, [
+            'name' => 'required|string|max:255',
+            'email' => "required|email|unique:users,email, $user->id",
+            'password' => 'sometimes|nullable|min:8',
+            'image'=> 'sometimes|nullable|image|max:2048',
+        ]);
+
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->description = $request->description;
+
+        if($request->has('password') && $request->password !== null){
+            $user->password = bcrypt($request->password);
+        }
+
+        if($request->hasFile('image')){
+            $image = $request->image;
+            $image_new_name = time() . '.' . $image->getClientOriginalExtension();
+            $image->move('storage/user/', $image_new_name);
+            $user->image = '/storage/user/' . $image_new_name;
+        }
+        $user->save();
+
+        Session::flash('success', 'User profile updated successfully');
+        return redirect()->back();
+    }
 }
