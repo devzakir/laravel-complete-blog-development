@@ -9,7 +9,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 // Front End Routes
 Route::get('/', 'FrontEndController@home')->name('website');
 Route::get('/about', 'FrontEndController@about')->name('website.about');
-Route::get('/category', 'FrontEndController@category')->name('website.category');
+Route::get('/category/{slug}', 'FrontEndController@category')->name('website.category');
 Route::get('/contact', 'FrontEndController@contact')->name('website.contact');
 Route::get('/post/{slug}', 'FrontEndController@post')->name('website.post');
 
@@ -27,3 +27,15 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
     Route::post('/profile', 'UserController@profile_update')->name('user.profile.update');
 
 });
+
+// Route::get('/test', function(){
+//     $id = 60;
+//     $posts = App\Post::all();
+//     foreach($posts as $post){
+//         $post->image = "https://i.picsum.photos/id/".$id."/640/480.jpg";
+//         $post->save();
+//         $id++;
+//     }
+
+//     return $posts;
+// });
