@@ -18,6 +18,11 @@
     <link rel="stylesheet" href="{{ asset('website') }}/css/aos.css">
 
     <link rel="stylesheet" href="{{ asset('website') }}/css/style.css">
+    <style>
+      .pagination {
+        margin-bottom: 0 !important;
+      }
+    </style>
   </head>
   <body>
   
