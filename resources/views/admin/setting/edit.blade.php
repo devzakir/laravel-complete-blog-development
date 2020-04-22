@@ -78,6 +78,18 @@
                                                     <input type="copyright" name="copyright" value="{{ $setting->copyright }}" class="form-control" placeholder="copyright">
                                                 </div>
                                             </div>
+                                            <div class="col-6">
+                                                <div class="form-group">
+                                                    <label for="email">Contact Phone Number</label>
+                                                    <input type="text" name="phone" value="{{ $setting->phone }}" class="form-control" placeholder="phone number">
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="form-group">
+                                                    <label for="address">Location</label>
+                                                    <textarea name="address" id="address" class="form-control" rows="1" placeholder="enter address">{{ $setting->address}}</textarea>
+                                                </div>
+                                            </div>
                                         </div>
                                         <div class="form-group">
                                             <div class="row">

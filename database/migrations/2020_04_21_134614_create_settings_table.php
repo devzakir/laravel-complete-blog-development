@@ -24,6 +24,8 @@ class CreateSettingsTable extends Migration
             $table->string('reddit')->nullable();
             $table->string('email')->nullable();
             $table->string('copyright')->nullable();
+            $table->string('phone')->nullable();
+            $table->text('address')->nullable();
             $table->timestamps();
         });
     }
