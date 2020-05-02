@@ -135,6 +135,14 @@
             </a>                    
           </li>
           <li class="nav-item mt-auto">
+            <a href="{{ route('contact.index') }}" class="nav-link">
+              <i class="nav-icon fas fa-envelope"></i>
+              <p>
+                Messages
+              </p>
+            </a>                    
+          </li>
+          <li class="nav-item mt-auto">
             <a href="{{ route('user.index') }}" class="nav-link">
               <i class="nav-icon fas fa-user"></i>
               <p>
