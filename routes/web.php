@@ -38,15 +38,3 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
     Route::get('/contact/show/{id}', 'ContactController@show')->name('contact.show');
     Route::delete('/contact/delete/{id}', 'ContactController@destroy')->name('contact.destroy');
 });
-
-// Route::get('/test', function(){
-//     $id = 60;
-//     $posts = App\Post::all();
-//     foreach($posts as $post){
-//         $post->image = "https://i.picsum.photos/id/".$id."/640/480.jpg";
-//         $post->save();
-//         $id++;
-//     }
-
-//     return $posts;
-// });

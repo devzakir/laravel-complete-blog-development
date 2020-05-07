@@ -50,12 +50,16 @@ $factory->define(Tag::class, function(Faker $faker){
 
 // Post factory
 $factory->define(Post::class, function(Faker $faker){
+    $id = rand(30, 300);
+    $image = "https://i.picsum.photos/id/".$id."/640/480.jpg";
     return [
         'title' => $faker->sentence(),
         'slug' => Str::slug($faker->sentence()),
-        'image' => $faker->imageUrl(600, 400),
+        'image' => $image,
         'description' => $faker->text(400),
-        'category_id' => factory('App\Category')->create()->id,
+        'category_id' => function(){
+            return Category::inRandomOrder()->first()->id;
+        },
         'user_id' => 1,
     ];
 });
