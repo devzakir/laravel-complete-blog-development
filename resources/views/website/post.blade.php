@@ -34,7 +34,7 @@
                         @if($post->tags()->count() > 0)
                         Tags: 
                             @foreach($post->tags as $tag)
-                                <a href="#">#{{ $tag->name }}</a>, 
+                                <a href="{{ route('website.tag', ['slug' => $tag->slug]) }}">#{{ $tag->name }}</a>, 
                             @endforeach
                         @endif
                     </p>
@@ -237,7 +237,7 @@
                     <h3 class="heading">Tags</h3>
                     <ul class="tags">
                         @foreach($tags as $tag)
-                        <li><a href="#">{{ $tag->name }}</a></li>
+                        <li><a href="{{ route('website.tag', ['slug' => $tag->slug]) }}">{{ $tag->name }}</a></li>
                         @endforeach
                     </ul>
                 </div>
