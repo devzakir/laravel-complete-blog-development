@@ -42,6 +42,7 @@
                                     <th>Category</th>
                                     <th>Tags</th>
                                     <th>Author</th>
+                                    <th>Created Date</th>
                                     <th style="width: 40px">Action</th>
                                 </tr>
                             </thead>
@@ -52,7 +53,7 @@
                                         <td>{{ $post->id }}</td>
                                         <td>
                                             <div style="max-width: 70px; max-height:70px;overflow:hidden">
-                                                <img src="{{ asset($post->image) }}" class="img-fluid" alt="">
+                                                <img src="{{ asset($post->image) }}" class="img-fluid img-rounded" alt="">
                                             </div>
                                         </td>
                                         <td>{{ $post->title }}</td>
@@ -63,6 +64,7 @@
                                             @endforeach
                                         </td>
                                         <td>{{ $post->user->name }}</td>
+                                        <td>{{ $post->created_at->format('d M, Y') }}</td>
                                         <td class="d-flex">
                                             <a href="{{ route('post.show', [$post->id]) }}" class="btn btn-sm btn-success mr-1"> <i class="fas fa-eye"></i> </a>
                                             <a href="{{ route('post.edit', [$post->id]) }}" class="btn btn-sm btn-primary mr-1"> <i class="fas fa-edit"></i> </a>
