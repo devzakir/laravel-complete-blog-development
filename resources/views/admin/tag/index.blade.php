@@ -72,6 +72,9 @@
                         </table>
                     </div>
                     <!-- /.card-body -->
+                    <div class="card-footer d-flex justify-content-center">
+                        {{ $tags->links() }}
+                    </div>
                 </div>
             </div>
         </div>

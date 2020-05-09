@@ -76,6 +76,9 @@
                         </table>
                     </div>
                     <!-- /.card-body -->
+                    <div class="card-footer d-flex justify-content-center">
+                        {{ $categories->links() }}
+                    </div>
                 </div>
             </div>
         </div>
