@@ -42,7 +42,7 @@
                                     <th>Category</th>
                                     <th>Tags</th>
                                     <th>Author</th>
-                                    <th>Created Date</th>
+                                    <th style="width: 130px">Created Date</th>
                                     <th style="width: 40px">Action</th>
                                 </tr>
                             </thead>
@@ -64,10 +64,11 @@
                                             @endforeach
                                         </td>
                                         <td>{{ $post->user->name }}</td>
-                                        <td>{{ $post->created_at->format('d M, Y') }}</td>
+                                        <td style="width: 130px">{{ $post->created_at->format('d M, Y') }}</td>
                                         <td class="d-flex">
                                             <a href="{{ route('post.show', [$post->id]) }}" class="btn btn-sm btn-success mr-1"> <i class="fas fa-eye"></i> </a>
                                             <a href="{{ route('post.edit', [$post->id]) }}" class="btn btn-sm btn-primary mr-1"> <i class="fas fa-edit"></i> </a>
+                                            <a href="{{ route('website.post', [$post->slug]) }}" target="_blank" class="btn btn-sm btn-dark mr-1"> <i class="fas fa-link"></i> </a>
                                             <form action="{{ route('post.destroy', [$post->id]) }}" class="mr-1" method="POST">
                                                 @method('DELETE')
                                                 @csrf 
