@@ -104,7 +104,7 @@
           <div class="col-12 text-center">
             <p>
               {{ $setting->copyright }} | This template is made with <i class="icon-heart text-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
-              <div class="mb-0">Developed By Zakir on <a href="">Laravel Blog Development </a>Series</div>
+              <div class="mb-0">Developed By Zakir on <a href="https://www.youtube.com/playlist?list=PLl4v4A2HI0YixTm5AsoTu-sKxiQti4-r6">Laravel Blog Development </a>Tutorial Series</div>
               </p>
           </div>
         </div>
