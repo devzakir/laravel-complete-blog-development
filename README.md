@@ -5,6 +5,9 @@ This is a Blog Development Tutorial Series on Youtube. This project is made by <
 - [Series Prview Link](https://www.youtube.com/watch?v=CEYYeeM763E&list=PLl4v4A2HI0YixTm5AsoTu-sKxiQti4-r6&index=1&t=1s)
 - [Youtube Playlist Link](https://www.youtube.com/playlist?list=PLl4v4A2HI0YixTm5AsoTu-sKxiQti4-r6)
 
+## Project Live Link
+[Live Link ⇨ ](https://laravel-blog-bd.herokuapp.com/)
+
 #### Project Key Matrics
 - Laravel v7.0
 - Frontend Template [(MiniBlog by Colorlib)](https://colorlib.com/wp/template/miniblog/)
