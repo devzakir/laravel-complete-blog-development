@@ -50,7 +50,7 @@ class CategoryController extends Controller
         ]);
 
         Session::flash('success', 'Category created successfully');
-        
+
         return redirect()->back();
     }
 
@@ -87,7 +87,7 @@ class CategoryController extends Controller
     {
         // validation
         $this->validate($request, [
-            'name' => "required|unique:categories,name,$category->name",
+            'name' => "required|unique:categories,name,$category->id",
         ]);
 
         $category->name = $request->name;
@@ -109,7 +109,7 @@ class CategoryController extends Controller
     {
         if($category){
             $category->delete();
-            
+
             Session::flash('success', 'Category deleted successfully');
             return redirect()->route('category.index');
         }
