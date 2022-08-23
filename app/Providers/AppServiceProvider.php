@@ -30,10 +30,12 @@ class AppServiceProvider extends ServiceProvider
             \URL::forceScheme('https');
         }
 
-        $categories = Category::take(5)->get();
-        View::share('categories', $categories);
+        if (!app()->runningInConsole()) {
+            $categories = Category::take(5)->get();
+            View::share('categories', $categories);
 
-        $setting = Setting::first();
-        View::share('setting', $setting);
+            $setting = Setting::first();
+            View::share('setting', $setting);
+        }
     }
 }
